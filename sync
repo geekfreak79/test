@@ -36,7 +36,7 @@ repo init --no-repo-verify --depth=1 -u $MANIFEST -b $BRANCH -g default,-device,
 
 # Clone local manifest! So that no need to manually git clone repos or change hals, you can use normal git clone or rm and re clone, they will cost little more time, and you may get timeout! Let's make it quit and depth=1 too.
 #git clone $ADDITIONAL_MANIFEST --depth 1 -b $ADDITIONAL_BRANCH .repo/local_manifests
-mv /tmp/ci/local_manifests /tmp/rom/.repo/
+#mv /tmp/ci/local_manifests /tmp/rom/.repo/
 
 # Try with -j22 first, if fails, it will try again with -j8
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 22 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 8
