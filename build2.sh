@@ -14,13 +14,22 @@ curl -F chat_id=$CHAT_ID -F document=@${1} -F parse_mode=markdown https://api.te
 
 cd /tmp/rom # Depends on where source got synced
 
-tg_sendText "Lunching"
+tg_sendText "Cloning trees"
+git clone https://github.com/aman25502/device_xiaomi_mojito -b bliss device/xiaomi/mojito
+git clone https://github.com/PixelExperience-Devices/kernel_xiaomi_mojito --depth=1 kernel/xiaomi/mojito
+git clone https://gitlab.pixelexperience.org/android/vendor-blobs/vendor_xiaomi_mojito --depth=1 vendor/xiaomi/mojito
+git clone https://gitlab.pixelexperience.org/android/vendor-blobs/vendor_xiaomi_mojito-vendor --depth=1 vendor/xiaomi/mojito-vendor
+
+tg_sendText "Setting up environment"
 # Normal build steps
 . build/envsetup.sh
-lunch lineage_a10-userdebug
+#lunch lineage_a10-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
+export WITH_GAPPS=false
+export GAPPS_BUILD=false
+export BLISS_BUILD_VARIANT=vanilla
 ccache -M 20G # It took less than 6 GB for less than 2 hours in 2 builds for Samsung A10
 ccache -o compression=true # Will save times and data to download and upload ccache, also negligible performance issue
 ccache -z
@@ -33,9 +42,9 @@ tg_sendText "Starting Compilation.."
 #mka test-api-stubs-docs -j8
 #mka bacon -j8 | tee build.txt
 
-make bacon -j28 | tee build.txt
+blissify mojito | tee build.txt
 
-(ccache -s && echo '' && free -h && echo '' && df -h && echo '' && ls -a out/target/product/a10/) | tee final_monitor.txt
+(ccache -s && echo '' && free -h && echo '' && df -h && echo '' && ls -a out/target/product/mojito/) | tee final_monitor.txt
 sleep 1s
 tg_sendFile "final_monitor.txt"
 sleep 2s
