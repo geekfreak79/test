@@ -14,11 +14,11 @@ curl -F chat_id=$CHAT_ID -F document=@${1} -F parse_mode=markdown https://api.te
 
 cd /tmp/rom # Depends on where source got synced
 
-tg_sendText "Cloning trees"
-git clone https://github.com/aman25502/device_xiaomi_mojito -b bliss device/xiaomi/mojito
-git clone https://github.com/PixelExperience-Devices/kernel_xiaomi_mojito --depth=1 kernel/xiaomi/mojito
-git clone https://gitlab.pixelexperience.org/android/vendor-blobs/vendor_xiaomi_mojito --depth=1 vendor/xiaomi/mojito
-git clone https://gitlab.pixelexperience.org/android/vendor-blobs/vendor_xiaomi_mojito-vendor --depth=1 vendor/xiaomi/mojito-vendor
+#tg_sendText "Cloning trees"
+#git clone https://github.com/aman25502/device_xiaomi_mojito -b bliss device/xiaomi/mojito
+#git clone https://github.com/PixelExperience-Devices/kernel_xiaomi_mojito --depth=1 kernel/xiaomi/mojito
+#git clone https://gitlab.pixelexperience.org/android/vendor-blobs/vendor_xiaomi_mojito --depth=1 vendor/xiaomi/mojito
+#git clone https://gitlab.pixelexperience.org/android/vendor-blobs/vendor_xiaomi_mojito-vendor --depth=1 vendor/xiaomi/mojito-vendor
 
 tg_sendText "Setting up environment"
 # Normal build steps
@@ -36,7 +36,19 @@ ccache -M 20G # It took less than 6 GB for less than 2 hours in 2 builds for Sam
 ccache -o compression=true # Will save times and data to download and upload ccache, also negligible performance issue
 ccache -z
 
-tg_sendText "Starting Compilation.."
+tg_sendText "Started Collecting CCACHE....."
+
+# Next 8 lines should be run first to collect ccache and then upload, after doning it 1 or 2 times, our ccache will help to build without these 8 lines.
+make api-stubs-docs || echo no problem, we need ccache
+make system-api-stubs-docs || echo no problem we need ccache
+make test-api-stubs-docs || echo no problem, we need ccache
+blissify mojito & # dont remove that '&'
+sleep 85m
+kill %1
+ccache -s
+#and dont use below codes for first 1 or 2 times, to get ccache uploaded,
+
+#tg_sendText "Starting Compilation.."
 
 # Compilation by parts if you get RAM issue but takes nore time!
 #mka api-stubs-docs -j8
@@ -44,7 +56,7 @@ tg_sendText "Starting Compilation.."
 #mka test-api-stubs-docs -j8
 #mka bacon -j8 | tee build.txt
 
-blissify mojito | tee build.txt
+#blissify mojito | tee build.txt
 
 (ccache -s && echo '' && free -h && echo '' && df -h && echo '' && ls -a out/target/product/mojito/) | tee final_monitor.txt
 sleep 1s
