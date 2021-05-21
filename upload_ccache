@@ -25,6 +25,6 @@ time com ccache 1 # Compression level 1, its enough
 # Rename file before uploading
 mv ccache.tar.gz $CCACHE_FILE
 
-time rclone copy $CCACHE_FILE aosp: -P # aosp is my rclone config name (first line without [] of ~/.config/rclone/rclone.conf file from rclone setup done on pc)
+time rclone copy $CCACHE_FILE geek:test-rclone # aosp is my rclone config name (first line without [] of ~/.config/rclone/rclone.conf file from rclone setup done on pc)
 
 tg_sendText "Sucessfully uploaded ccache to Drive.."
