@@ -45,7 +45,7 @@ make api-stubs-docs || echo no problem, we need ccache
 make system-api-stubs-docs || echo no problem we need ccache
 make test-api-stubs-docs || echo no problem, we need ccache
 blissify mojito & # dont remove that '&'
-sleep 85m
+sleep 35m
 kill %1
 ccache -s
 #and dont use below codes for first 1 or 2 times, to get ccache uploaded,
