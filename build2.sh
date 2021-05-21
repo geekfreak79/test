@@ -21,6 +21,7 @@ cd /tmp/rom # Depends on where source got synced
 #git clone https://gitlab.pixelexperience.org/android/vendor-blobs/vendor_xiaomi_mojito-vendor --depth=1 vendor/xiaomi/mojito-vendor
 
 tg_sendText "Setting up environment"
+mkdir /tmp/ccache
 # Normal build steps
 . build/envsetup.sh
 #lunch lineage_a10-userdebug
