@@ -26,7 +26,7 @@ tg_sendText "Setting up environment"
 #lunch lineage_a10-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
-echo "export USE_CCACHE=1" > ~/.bashrc
+echo "export USE_CCACHE=1" >> ~/.bashrc
 source ~/.bashrc
 export USE_CCACHE=1
 export WITH_GAPPS=false
