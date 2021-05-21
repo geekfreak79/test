@@ -14,11 +14,11 @@ curl -F chat_id=$CHAT_ID -F document=@${1} -F parse_mode=markdown https://api.te
 
 cd /tmp/rom # Depends on where source got synced
 
-#tg_sendText "Cloning trees"
-#git clone https://github.com/aman25502/device_xiaomi_mojito -b bliss device/xiaomi/mojito
-#git clone https://github.com/PixelExperience-Devices/kernel_xiaomi_mojito --depth=1 kernel/xiaomi/mojito
-#git clone https://gitlab.pixelexperience.org/android/vendor-blobs/vendor_xiaomi_mojito --depth=1 vendor/xiaomi/mojito
-#git clone https://gitlab.pixelexperience.org/android/vendor-blobs/vendor_xiaomi_mojito-vendor --depth=1 vendor/xiaomi/mojito-vendor
+tg_sendText "Cloning trees"
+git clone https://github.com/aman25502/device_xiaomi_mojito -b bliss device/xiaomi/mojito
+git clone https://github.com/PixelExperience-Devices/kernel_xiaomi_mojito --depth=1 kernel/xiaomi/mojito
+git clone https://gitlab.pixelexperience.org/android/vendor-blobs/vendor_xiaomi_mojito --depth=1 vendor/xiaomi/mojito
+git clone https://gitlab.pixelexperience.org/android/vendor-blobs/vendor_xiaomi_mojito-vendor --depth=1 vendor/xiaomi/mojito-vendor
 
 tg_sendText "Setting up environment"
 mkdir /tmp/ccache
@@ -63,4 +63,4 @@ ccache -s
 sleep 1s
 tg_sendFile "final_monitor.txt"
 sleep 2s
-tg_sendFile "build.txt"
+#tg_sendFile "build.txt"
