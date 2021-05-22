@@ -17,7 +17,7 @@ env: # Environment variables to pass to all tasks
     user_name: "geekfreak79"
 
 task:
-    name: BlissROM # Project name
+    name: BlissROM # Project name Build 2 with 1gb ccache
     timeout_in: 2h # Otherwise it will timeout at 60m automatically, 120m highest in free account
     container:
       image: apon77/aosp:latest # It has built-in setup environment + repo, aria2, rclone, pigz, username ci, and email ci@ci.ci [You can use your own docker image if you want, or you can use this one too!]
