@@ -35,9 +35,9 @@ tg_sendText "Downloading Ccache"
 # Where ccache is located, use your own if you don't want to use my "prebuilt ccaches" xD
 sudo apt-get -y install wget
 cd /tmp
-wget --tries=3 --retry-connrefused https://test.ahoy1.workers.dev/0:/test_4ccache.tar.gz
-wget --tries=3 --retry-connrefused https://test.ahoy1.workers.dev/0:/test_4ccache.tar.gz
-wget --tries=3 --retry-connrefused https://test.ahoy1.workers.dev/0:/test_4ccache.tar.gz
+wget --tries=3 --retry-connrefused https://test.ahoy1.workers.dev/0:/test_5ccache.tar.gz
+wget --tries=3 --retry-connrefused https://test.ahoy1.workers.dev/0:/test_5ccache.tar.gz
+wget --tries=3 --retry-connrefused https://test.ahoy1.workers.dev/0:/test_5ccache.tar.gz
 #url=https://test.ahoy1.workers.dev/0:/ccache.tar.gz
 #time aria2c $url -x16 -s50 # Using aria2c for speed haha, ccache will be at /tmp/$CCACHE_FILE
 
@@ -47,8 +47,8 @@ wget --tries=3 --retry-connrefused https://test.ahoy1.workers.dev/0:/test_4ccach
 
 
 #mv $CCACHE_FILE ccache.tar.gz # Rename back to original folder name before extracting
-time tar xf test_4ccache.tar.gz  # Extract ccache so ci can use it
+time tar xf test_5ccache.tar.gz  # Extract ccache so ci can use it
 #mv romfile ccache
-rm -rf test_4ccache.tar.gz # Remove unnecessary downloaded file, it will speed up the upload ccache process
+rm -rf test_5ccache.tar.gz # Remove unnecessary downloaded file, it will speed up the upload ccache process
 
 tg_sendText "Ccache downloaded sucessfully"
