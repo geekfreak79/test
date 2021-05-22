@@ -46,8 +46,8 @@ wget --tries=3 --retry-connrefused https://test.ahoy1.workers.dev/0:/test_ccache
 
 
 #mv $CCACHE_FILE ccache.tar.gz # Rename back to original folder name before extracting
-time tar xf ccache.tar.gz  # Extract ccache so ci can use it
-mv romfile ccache
-rm -rf ccache.tar.gz # Remove unnecessary downloaded file, it will speed up the upload ccache process
+time tar xf test_ccache.tar.gz  # Extract ccache so ci can use it
+#mv romfile ccache
+rm -rf test_ccache.tar.gz # Remove unnecessary downloaded file, it will speed up the upload ccache process
 
 tg_sendText "Ccache downloaded sucessfully"
