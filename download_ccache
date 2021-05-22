@@ -37,6 +37,7 @@ sudo apt-get -y install wget
 cd /tmp
 wget --tries=3 --retry-connrefused https://test.ahoy1.workers.dev/0:/test_1ccache.tar.gz
 wget --tries=3 --retry-connrefused https://test.ahoy1.workers.dev/0:/test_1ccache.tar.gz
+wget --tries=3 --retry-connrefused https://test.ahoy1.workers.dev/0:/test_1ccache.tar.gz
 #url=https://test.ahoy1.workers.dev/0:/ccache.tar.gz
 #time aria2c $url -x16 -s50 # Using aria2c for speed haha, ccache will be at /tmp/$CCACHE_FILE
 
