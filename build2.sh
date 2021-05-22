@@ -41,9 +41,9 @@ tg_sendText "Started Collecting CCACHE....."
 
 # Next 9 lines should be run first to collect ccache and then upload, after doning it 1 or 2 times, our ccache will help to build without these 8 lines.
 lunch bliss_mojito-userdebug
-make api-stubs-docs || echo no problem, we need ccache
-make system-api-stubs-docs || echo no problem we need ccache
-make test-api-stubs-docs || echo no problem, we need ccache
+#make api-stubs-docs || echo no problem, we need ccache
+#make system-api-stubs-docs || echo no problem we need ccache
+#make test-api-stubs-docs || echo no problem, we need ccache
 blissify mojito & # dont remove that '&'
 sleep 35m
 kill %1
