@@ -24,6 +24,8 @@ time com ccache 1 # Compression level 1, its enough
 
 # Rename file before uploading
 mv ccache.tar.gz $CCACHE_FILE
+mkdir -p ~/.config/rclone
+echo "$rclone_config" > ~/.config/rclone/rclone.conf
 
 time rclone copy $CCACHE_FILE geek:test-rclone # aosp is my rclone config name (first line without [] of ~/.config/rclone/rclone.conf file from rclone setup done on pc)
 
