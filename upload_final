@@ -13,9 +13,9 @@ curl -F chat_id=$CHAT_ID -F document=@${1} -F parse_mode=markdown https://api.te
 }
 
 # Upload function for uploading rom zip file if you don't want to use google drive !
-up() {
+#up() {
 	#curl --upload-file $1 https://transfer.sh/ | tee download.txt
-}
+#}
 
 cd /tmp/rom # Depends on where source got synced.
 
