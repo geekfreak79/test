@@ -35,14 +35,14 @@ tg_sendText "Downloading Ccache"
 # Where ccache is located, use your own if you don't want to use my "prebuilt ccaches" xD
 sudo apt-get -y install wget
 cd /tmp
-wget --tries=3 --retry-connrefused https://test.ahoy1.workers.dev/0:/test_9ccache.tar.gz
-wget --tries=3 --retry-connrefused https://test.ahoy1.workers.dev/0:/test_9ccache.tar.gz
-wget --tries=3 --retry-connrefused https://test.ahoy1.workers.dev/0:/test_9ccache.tar.gz
+#wget --tries=3 --retry-connrefused https://test.ahoy1.workers.dev/0:/test_9ccache.tar.gz
+#wget --tries=3 --retry-connrefused https://test.ahoy1.workers.dev/0:/test_9ccache.tar.gz
+#wget --tries=3 --retry-connrefused https://test.ahoy1.workers.dev/0:/test_9ccache.tar.gz
 #url=https://test.ahoy1.workers.dev/0:/ccache.tar.gz
 #time aria2c $url -x16 -s50 # Using aria2c for speed haha, ccache will be at /tmp/$CCACHE_FILE
 
 # METHOD 2: Download using Google Drive direcly (I have a premium account..HAHA):
-#time rclone copy geek:test-rclone/ccache.tar.gz /tmp/
+time rclone copy geek:test-rclone/test_9ccache.tar.gz /tmp/
 #cd /tmp # Where ccache has been downloaded
 
 
