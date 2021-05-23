@@ -44,10 +44,10 @@ tg_sendText "Started Collecting CCACHE....."
 #make api-stubs-docs || echo no problem, we need ccache
 #make system-api-stubs-docs || echo no problem we need ccache
 #make test-api-stubs-docs || echo no problem, we need ccache
-blissify mojito | tee build.txt & # dont remove that '&'
-sleep 85m
-kill %1
-ccache -s
+#blissify mojito | tee build.txt & # dont remove that '&'
+#sleep 85m
+#kill %1
+#ccache -s
 #and dont use below codes for first 1 or 2 times, to get ccache uploaded,
 
 #tg_sendText "Starting Compilation.."
@@ -58,7 +58,8 @@ ccache -s
 #mka test-api-stubs-docs -j8
 #mka bacon -j8 | tee build.txt
 
-#blissify mojito | tee build.txt
+blissify mojito | tee build.txt
+ccache -a
 
 (ccache -s && echo '' && free -h && echo '' && df -h && echo '' && ls -a out/target/product/mojito/) | tee final_monitor.txt
 sleep 1s
