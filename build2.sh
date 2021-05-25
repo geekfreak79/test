@@ -27,14 +27,14 @@ mkdir /tmp/ccache
 #lunch lineage_a10-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
-echo "export USE_CCACHE=1" >> ~/.bashrc
-source ~/.bashrc
+#echo "export USE_CCACHE=1" >> ~/.bashrc
+#source ~/.bashrc
 export USE_CCACHE=1
 export WITH_GAPPS=false
 export GAPPS_BUILD=false
 export BLISS_BUILD_VARIANT=vanilla
 ccache -M 20G # It took less than 6 GB for less than 2 hours in 2 builds for Samsung A10
-ccache -o compression=true # Will save times and data to download and upload ccache, also negligible performance issue
+#ccache -o compression=true # Will save times and data to download and upload ccache, also negligible performance issue
 ccache -z
 
 tg_sendText "Started Collecting CCACHE....."
@@ -59,7 +59,7 @@ tg_sendText "Started Collecting CCACHE....."
 #mka bacon -j8 | tee build.txt
 
 blissify mojito | tee build.txt
-ccache -a
+#ccache -a
 
 (ccache -s && echo '' && free -h && echo '' && df -h && echo '' && ls -a out/target/product/mojito/) | tee final_monitor.txt
 sleep 1s
