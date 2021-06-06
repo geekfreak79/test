@@ -33,6 +33,8 @@ export USE_CCACHE=1
 export WITH_GAPPS=false
 export GAPPS_BUILD=false
 export BLISS_BUILD_VARIANT=vanilla
+export SKIP_ABI_CHECKS=true
+export SKIP_API_CHECKS=true
 ccache -M 20G # It took less than 6 GB for less than 2 hours in 2 builds for Samsung A10
 #ccache -o compression=true # Will save times and data to download and upload ccache, also negligible performance issue
 ccache -z
