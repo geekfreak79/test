@@ -12,7 +12,7 @@ function tg_sendFile() {
 curl -F chat_id=$CHAT_ID -F document=@${1} -F parse_mode=markdown https://api.telegram.org/bot$BOT_TOKEN/sendDocument
 }
 
-cd /tmp/rom # Depends on where source got synced
+cd /tmp/rom # Depends on where source got synced1
 
 tg_sendText "Cloning trees"
 git clone https://github.com/aman25502/device_xiaomi_mojito -b bliss device/xiaomi/mojito
