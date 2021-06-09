@@ -32,7 +32,7 @@ export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
 export WITH_GAPPS=true
 export GAPPS_BUILD=true
-export BLISS_BUILD_VARIANT=gapps
+export BLISS_BUILD_VARIANT=GAPPS
 export SKIP_ABI_CHECKS=true
 export SKIP_API_CHECKS=true
 ccache -M 20G # It took less than 6 GB for less than 2 hours in 2 builds for Samsung A10
