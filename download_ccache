@@ -42,13 +42,13 @@ cd /tmp
 #time aria2c $url -x16 -s50 # Using aria2c for speed haha, ccache will be at /tmp/$CCACHE_FILE
 
 # METHOD 2: Download using Google Drive direcly (I have a premium account..HAHA):
-time rclone copy geek:test-rclone/test_GAPPSccache.tar.gz /tmp/
+time rclone copy geek:test-rclone/test_1GAPPSccache.tar.gz /tmp/
 #cd /tmp # Where ccache has been downloaded
 
 
 #mv $CCACHE_FILE ccache.tar.gz # Rename back to original folder name before extracting
-time tar xf test_GAPPSccache.tar.gz  # Extract ccache so ci can use it
+time tar xf test_1GAPPSccache.tar.gz  # Extract ccache so ci can use it
 #mv romfile ccache
-rm -rf test_GAPPSccache.tar.gz # Remove unnecessary downloaded file, it will speed up the upload ccache process
+rm -rf test_1GAPPSccache.tar.gz # Remove unnecessary downloaded file, it will speed up the upload ccache process
 
 tg_sendText "Ccache downloaded sucessfully"
