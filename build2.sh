@@ -24,7 +24,6 @@ tg_sendText "Setting up environment"
 mkdir /tmp/ccache
 # Normal build steps
 . build/envsetup.sh
-#lunch lineage_a10-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 #echo "export USE_CCACHE=1" >> ~/.bashrc
