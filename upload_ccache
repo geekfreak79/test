@@ -8,7 +8,7 @@ curl -s "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" \
 -d "disable_web_page_preview=true"
 }
 
-CCACHE_FILE="$CIRRUS_BRANCH""_12ccache.tar.gz"
+CCACHE_FILE="$CIRRUS_BRANCH""_GAPPSccache.tar.gz"
 
 cd /tmp
 
