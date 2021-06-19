@@ -59,7 +59,7 @@ tg_sendText "Starting Compilation.."
 #mka test-api-stubs-docs -j8
 #mka bacon -j8 | tee build.txt
 
-blissify mojito | tee build.txt
+blissify -g mojito | tee build.txt
 #ccache -a
 
 (ccache -s && echo '' && free -h && echo '' && df -h && echo '' && ls -a out/target/product/mojito/) | tee final_monitor.txt
